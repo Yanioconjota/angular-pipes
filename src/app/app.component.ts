@@ -12,6 +12,12 @@ export class AppComponent {
   porcentaje: number = 0.234;
   salario: number = 1234.5;
 
+  valorPromesa = new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve('Llegó el paaaaavooo!')
+    }, 4500);
+  });
+
   heroe = {
     nombre: 'James Howlett',
     aliases: ['Logan', 'Wolverine'],
