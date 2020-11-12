@@ -13,6 +13,18 @@
       </thead>
       <tbody>
         <tr>
+          <td>{{ nombre2 }} <span class="badge badge-danger">{{'custom pipe' | uppercase}}</span></td>
+          <td> capitalizado </td>
+          <td>{{ nombre2 | capitalizado }}</td>
+        </tr>
+        
+        <tr>
+          <td>{{ nombre2 }} <span class="badge badge-danger">{{'custom pipe' | uppercase}}</span></td>
+          <td> capitalizado:false </td>
+          <td>{{ nombre2 | capitalizado:false }}</td>
+        </tr>
+
+        <tr>
           <td>{{ nombre }}</td>
           <td> uppercase </td>
           <td>{{ nombre | uppercase }}</td>

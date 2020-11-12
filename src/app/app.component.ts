@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nombre: string = 'Capitán América';
+  nombre2: string = 'sTevE roGerS';
   arreglo:string[] = ['Ironman', 'Spiderman', 'Thor', 'Loki', 'Groot'];
   PI: number = Math.PI;
   porcentaje: number = 0.234;
