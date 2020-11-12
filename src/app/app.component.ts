@@ -11,4 +11,15 @@ export class AppComponent {
   PI: number = Math.PI;
   porcentaje: number = 0.234;
   salario: number = 1234.5;
+
+  heroe = {
+    nombre: 'James Howlett',
+    aliases: ['Logan', 'Wolverine'],
+    edad: 197,
+    direccion: {
+      calle: '1407 Graymalkin Lane, Salem Center',
+      condado: 'Westchester County',
+      Estado: 'NY'
+    }
+  }
 }

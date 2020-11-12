@@ -107,6 +107,12 @@
           <td> currency:'ARS$':'symbol':'.0-0' </td>
           <td>{{ salario | currency:'ARS$':'symbol':'.0-0' }}</td>
         </tr>
+
+        <tr>
+          <td>{{ salario }}</td>
+          <td> currency:'ARS$':'symbol':'.0-0' </td>
+          <td>{{ salario | currency:'ARS$':'symbol':'.0-0' }}</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -127,5 +133,15 @@
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let item of arreglo | slice:1:4">{{ item }}</li>
     </ul>
+  </div>
+</div>
+
+<div class="row my-4">
+  <div class="col-12">
+    <h4 class="text-muted">JSON</h4>
+    <h6 class="text-muted"><small><em>heroe | json</em></small></h6>
+  </div>
+  <div class="col">
+    <pre class="bg-light border rounded text-success p-3">heroe = {{ heroe | json }}</pre>
   </div>
 </div>
