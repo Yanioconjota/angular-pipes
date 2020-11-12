@@ -10,4 +10,5 @@ export class AppComponent {
   arreglo:string[] = ['Ironman', 'Spiderman', 'Thor', 'Loki', 'Groot'];
   PI: number = Math.PI;
   porcentaje: number = 0.234;
+  salario: number = 1234.5;
 }
