@@ -143,6 +143,12 @@
           <td> date:'MMMM dd' </td>
           <td>{{ fecha | date:'MMMM dd' }}</td>
         </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> date:'full':'+0000':'es-Ar' </td>
+          <td>{{ fecha | date:'full':'+0000':'es-Ar' }}</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -150,12 +156,36 @@
 <div class="row">
   <div class="col-12">
     <hr>
-    <p><em>To take advantage of Angular's localization features, use the Angular CLI to add the @angular/localize package to your project:</em></p>
+  </div>
+  <div class="col-12 d-flex align-items-center">
+    <h4 class="text-muted mr-2">Cambiar idoma fecha</h4>
+    <div class="btn-group">
+      <button (click)="idioma = 'es'" class="btn btn-primary">Español</button>
+      <button (click)="idioma = 'pt'" class="btn btn-success">Portugués</button>
+      <button (click)="idioma = 'en'" class="btn btn-danger">Inglés</button>
+    </div>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-12">
+    <p>{{ fecha }}</p>
+    <p>date:'full':'':'{{idioma}}'</p>
+    <p>{{ fecha | date:'full':'':idioma }}</p>
+  </div>
+  <div class="col-12 col-md-4">
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <hr>
+    <p><em>Para agregar localization o idiomas a nuestro proyecto debemos instalarlos con el siguiente comando</em></p>
     <pre class="bg-light border rounded text-success p-3">ng add @angular/localize</pre>
   </div>
   <div class="col-12">
     <hr>
-    <p><em>Actualmente Noviembre 2020 la info de la documentación difiere con los videos del curso. Lo que funciona sería algo como esto:</em></p>
+    <p><em>Luego deben agregarse en nuestro proyecto en el app.module.ts</em></p>
     <h6>Mas información</h6>
     <ul>
       <li><em><a target="_blank" href="https://es.stackoverflow.com/questions/194958/como-cambiar-lenguaje-de-fecha-data-pipe-angular-6">Angular docs</a></em></li>
@@ -177,7 +207,7 @@
       // registrar los locales con el nombre que quieras utilizar a la hora de proveer
       registerLocaleData(localePy, 'es');
       registerLocaleData(localePt, 'pt');
-      registerLocaleData(localeEn, 'en')
+      registerLocaleData(localeEn, 'en');
       registerLocaleData(localeEsAR, 'es-Ar');
 
       @NgModule({
