@@ -185,9 +185,6 @@
     <p>date:'full':'':'{{idioma}}'</p>
     <p>{{ fecha | date:'full':'':idioma }}</p>
   </div>
-  <div class="col-12 col-md-4">
-    
-  </div>
 </div>
 <div class="row">
   <div class="col-12">
@@ -260,5 +257,46 @@
   </div>
   <div class="col">
     <pre class="bg-light border rounded text-success p-3">heroe = {{ heroe | json }}</pre>
+  </div>
+</div>
+
+<div class="row my-4">
+  <div class="col-12 mb-3">
+    <hr>
+    <div class="d-flex align-items-center">
+      <h4 class="text-muted mr-2">Dom seguro</h4> <span class="badge badge-danger">{{'custom pipe' | uppercase}}</span>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560"
+      height="315"
+      [src]="videoUrl | domseguro"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="col-12 col-md-8">
+    <p>Utlizamos la librería sanitizer de Angular para confiar en la url que le pasamos al iframe</p>
+    <pre class="bg-light border rounded text-success p-3">
+      {{"
+      import { Pipe, PipeTransform } from '@angular/core';
+      import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
+      @Pipe({
+        name: 'domseguro'
+      })
+      export class DomseguroPipe implements PipeTransform {
+
+        constructor(private domSanitizer: DomSanitizer){}
+
+        transform(value: string, ...args: unknown[]): SafeResourceUrl {
+          return this.domSanitizer.bypassSecurityTrustResourceUrl( value );
+        }
+
+      }
+    "}}
+    </pre>
   </div>
 </div>
