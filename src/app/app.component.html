@@ -300,3 +300,22 @@
     </pre>
   </div>
 </div>
+<div class="row my-4">
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-12 d-flex align-items-center">
+    <h4 class="text-muted mr-2">Mostrar contraseña</h4>
+    <div class="btn-group">
+      <button (click)="mostrar = !mostrar" class="btn btn-primary">Mostrar</button>
+    </div>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-12">
+    <p>{{ nombre }}</p>
+    <p>passwordShow:'{{mostrar}}'</p>
+    <p>{{ nombre | passwordShow:mostrar }}</p>
+  </div>
+</div>
